@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finals Activities</title>
+<style>
+/* CSS Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFD6E0; /* Light pink background color */
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    color: #FF4F6D; /* Pink color for header text */
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 42px;
+    margin-bottom: 5px;
+}
+
+/* Navigation button */
+.back-btn {
+    display: block;
+    margin: 0 auto;
+    background-color: #FF4F6D;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Finals Activities</h1>
+    </div>
+
+    <!-- Back button -->
+    <button class="back-btn" onclick="goBack()">Back</button>
+</div>
+
+<script>
+    // Function to navigate back to the landing page
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+</body>
+</html>

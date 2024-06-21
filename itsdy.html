@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My School Activities</title>
+<style>
+/* CSS Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFD6E0; /* Light pink background color */
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    color: #FF4F6D; /* Pink color for header text */
+    margin-bottom: 30px;
+    animation: fadeInDown 1s ease;
+}
+
+.header h1 {
+    font-size: 42px;
+    margin-bottom: 5px;
+}
+
+.header h2 {
+    font-size: 24px;
+}
+
+.section {
+    text-align: center;
+    animation: fadeInUp 1s ease;
+}
+
+.section h2 {
+    font-size: 32px;
+    color: #FF4F6D; /* Pink color for section headings */
+    margin-bottom: 30px;
+}
+
+.link-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.link {
+    padding: 15px 40px;
+    margin: 10px;
+    background-color: #FF4F6D; /* Pink color for links */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 20px;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: zoomIn 0.5s ease;
+}
+
+.link:hover {
+    background-color: #FF6B99; /* Lighter pink color on hover */
+}
+
+/* Keyframe animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Donna Mae Bucayon</h1>
+        <h2>BS Computer Engineering - 601</h2>
+    </div>
+
+    <div class="section">
+        <h2>Activities</h2>
+        <div class="link-container">
+            <a href="prelimitsdy.html" class="link">Prelim</a>
+            <a href="midtermitsdy.html" class="link">Midterm</a>
+            <a href="prefinalsitsdy.html" class="link">Pre-final</a>
+            <a href="finalsitsdy.html" class="link">Final</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

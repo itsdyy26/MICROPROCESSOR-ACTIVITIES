@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prelim Activities</title>
+<style>
+/* CSS Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFD6E0; /* Light pink background color */
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    color: #FF4F6D; /* Pink color for header text */
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 42px;
+    margin-bottom: 5px;
+}
+
+.header h2 {
+    font-size: 24px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.image:hover {
+    transform: scale(1.05);
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Navigation buttons */
+.modal-btn {
+    position: fixed;
+    background-color: #FF4F6D;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.prev-btn {
+    left: 20px;
+    bottom: 70px; /* Adjusted position */
+}
+
+.next-btn {
+    right: 20px;
+    bottom: 70px; /* Adjusted position */
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Prelim Activities</h1>
+    </div>
+
+    <!-- Back button -->
+    <button class="modal-btn prev-btn" onclick="goBack()">Back</button>
+
+    <div class="gallery">
+        <!-- Actual pictures -->
+        <img class="image" src="la (1).jpg" onclick="openModal('la (1).jpg')" alt="Prelim Activity 1">
+        <img class="image" src="la (2).jpg" onclick="openModal('la (2).jpg')" alt="Prelim Activity 2">
+        <img class="image" src="lal (1).jpg" onclick="openActivity3()" alt="Prelim Activity 3">
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <button class="modal-btn prev-btn" id="prevBtn" onclick="prevImage()">Previous</button>
+        <button class="modal-btn next-btn" id="nextBtn" onclick="nextImage()">Next</button>
+    </div>
+
+    <script>
+        var modal = document.getElementById('myModal');
+        var modalImg = document.getElementById('modalImg');
+        var currentImageIndex = 0;
+        var imageSources = [];
+
+        // Function to open modal
+        function openModal(imageSrc) {
+            modal.style.display = 'block';
+            modalImg.src = imageSrc;
+            // Hide navigation buttons for single image
+            document.getElementById('prevBtn').style.display = 'none';
+            document.getElementById('nextBtn').style.display = 'none';
+        }
+
+        // Function to close modal
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Function to open Activity 3 modal
+        function openActivity3() {
+            imageSources = ['lal (4).jpg', 'lal (3).jpg', 'lal (2).jpg', 'lal (1).jpg'];
+            openModal(imageSources[0]);
+            // Display navigation buttons for multiple images
+            document.getElementById('prevBtn').style.display = 'block';
+            document.getElementById('nextBtn').style.display = 'block';
+        }
+
+        // Function to navigate back to the landing page
+        function goBack() {
+            window.history.back();
+        }
+
+        // Function to display next image in modal
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % imageSources.length;
+            modalImg.src = imageSources[currentImageIndex];
+            // Hide next button if on last image
+            document.getElementById('nextBtn').style.display = currentImageIndex === (imageSources.length - 1) ? 'none' : 'block';
+        }
+
+        // Function to display previous image in modal
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + imageSources.length) % imageSources.length;
+            modalImg.src = imageSources[currentImageIndex];
+            // Hide next button if on first image
+            document.getElementById('nextBtn').style.display = currentImageIndex === 0 ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
